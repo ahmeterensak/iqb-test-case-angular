@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+.container-add-exam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 200px;
+}
+
+.info-container {
+  display: flex;
+  gap: 20px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-button-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.exam-result-form {
+  margin-right: 10px;
+}
+
+.manage-result-card {
+  margin: 40px 50px;
+}

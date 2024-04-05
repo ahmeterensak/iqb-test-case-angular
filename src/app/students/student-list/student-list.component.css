@@ -1,0 +1,48 @@
+.row-is-clicked {
+    font-weight: bold;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+}
+
+.student-info {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.course-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.course-table th,
+.course-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.course-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center; /* Bileşenleri dikey olarak ortala */
+}
+
+.filter-field {
+    margin-right: 10px; /* İstenilen boşluk değeri */
+}

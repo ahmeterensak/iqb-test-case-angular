@@ -1,0 +1,70 @@
+<div style="height: 25px;"></div>
+
+<div class="container">
+
+    <div class="half-width">
+        <mat-form-field>
+            <mat-label>Students</mat-label>
+            <mat-select [(value)]="selectedStudent" (selectionChange)="onStudentSelected()">
+                <mat-option>-- None --</mat-option>
+                <mat-option *ngFor="let student of students" [value]="student">
+                    {{ student.fullName }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <table *ngIf="resultsForCourse && resultsForCourse.length" mat-table [dataSource]="resultsForCourse"
+            class="mat-elevation-z8">
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Course ID </th>
+                <td mat-cell *matCellDef="let result"> {{result.course.id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Course Name </th>
+                <td mat-cell *matCellDef="let result"> {{result.course.name}} </td>
+            </ng-container>
+            <ng-container matColumnDef="score">
+                <th mat-header-cell *matHeaderCellDef> Score </th>
+                <td mat-cell *matCellDef="let result"> {{result.score}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedResultCourseColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedResultCourseColumns;"></tr>
+        </table>
+        <p *ngIf="selectedStudent && resultsForCourse.length === 0">There is no data for selected user!</p>
+    </div>
+    <div class="half-width">
+
+        <mat-form-field>
+            <mat-label>Courses</mat-label>
+            <mat-select [(value)]="selectedCourse" (selectionChange)="onCourseSelected()">
+                <mat-option>-- None --</mat-option>
+                <mat-option *ngFor="let course of courses" [value]="course">
+                    {{ course.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <table *ngIf="resultsForStudent && resultsForStudent.length" mat-table [dataSource]="resultsForStudent"
+            class="mat-elevation-z8">
+
+            <ng-container matColumnDef="fullName">
+                <th mat-header-cell *matHeaderCellDef> Student Name </th>
+                <td mat-cell *matCellDef="let result"> {{result.student.fullName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="number">
+                <th mat-header-cell *matHeaderCellDef> Student Number </th>
+                <td mat-cell *matCellDef="let result"> {{result.student.number}} </td>
+            </ng-container>
+            <ng-container matColumnDef="score">
+                <th mat-header-cell *matHeaderCellDef> Score </th>
+                <td mat-cell *matCellDef="let result"> {{result.score}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedResultStudentColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedResultStudentColumns;"></tr>
+        </table>
+        <p *ngIf="selectedCourse && resultsForStudent.length === 0">There is no data for selected course.</p>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="form-container">
+    <mat-card class="student-card">
+        <mat-card-header>
+            <mat-card-title>Add New Student</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form #studentForm="ngForm" (ngSubmit)="onSubmit(student,studentForm)">
+                <mat-form-field>
+                    <mat-label>Full Name</mat-label>
+                    <input matInput name="fullName" [(ngModel)]="student.fullName" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Number</mat-label>
+                    <input matInput name="number" [(ngModel)]="student.number" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" name="email" [(ngModel)]="student.email" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Gsm Number</mat-label>
+                    <input matInput name="gsmNumber" [(ngModel)]="student.gsmNumber" required>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button color="primary" type="submit">Add Student</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

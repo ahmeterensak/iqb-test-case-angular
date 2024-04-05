@@ -1,0 +1,24 @@
+.row-is-clicked {
+    font-weight: bold;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    /* Bileşenleri dikey olarak ortala */
+}
+
+.filter-field {
+    margin-right: 10px;
+    /* İstenilen boşluk değeri */
+}

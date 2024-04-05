@@ -1,0 +1,12 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  height: 50vh;
+}
+
+.student-card {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+}
